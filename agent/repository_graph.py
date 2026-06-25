@@ -19,7 +19,7 @@ from agent.nodes.repository_node import (
     repository_node
 )
 
-
+BASE_DIR = Path(__file__).resolve().parent.parent
 DB_DIR = BASE_DIR / "database"
 DB_DIR.mkdir(parents=True, exist_ok=True)
 
