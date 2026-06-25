@@ -1,4 +1,5 @@
 import sqlite3
+from pathlib import Path
 
 from langgraph.graph import (
     START,
@@ -30,9 +31,13 @@ from agent.nodes.pr_generator_node import (
     pr_generator_node
 )
 
+DB_DIR = BASE_DIR / "database"
+DB_DIR.mkdir(parents=True, exist_ok=True)
+
+DB_PATH = DB_DIR / "onboarding.db"
 
 conn = sqlite3.connect(
-    "database/onboarding.db",
+    str(DB_PATH),
     check_same_thread=False
 )
 
